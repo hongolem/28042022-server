@@ -4,6 +4,12 @@ let B = 0
 let C = 0
 let D = 0
 let E = 0
+input.onButtonPressed(Button.A, function on_button_pressed_a() {
+    radio.sendNumber(1)
+})
+input.onButtonPressed(Button.B, function on_button_pressed_b() {
+    radio.sendNumber(0)
+})
 radio.onReceivedValue(function on_received_value(name: string, value: number) {
     
     if (value == 65) {
