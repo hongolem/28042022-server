@@ -32,12 +32,13 @@ input.onButtonPressed(Button.B, function on_button_pressed_b() {
     console.log("Nehlasovalo " + Bez_odpovědi + " lidí.")
 })
 input.onLogoEvent(TouchButtonEvent.Pressed, function on_logo_event_pressed() {
-    let Bez_odpovědi = 0
-    let A = 0
-    let B = 0
-    let C = 0
-    let D = 0
-    let E = 0
+    
+    Bez_odpovědi = 0
+    A = 0
+    B = 0
+    C = 0
+    D = 0
+    E = 0
 })
 radio.onReceivedValue(function on_received_value2(serial_number: string, value: number) {
     

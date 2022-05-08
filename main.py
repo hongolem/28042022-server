@@ -37,6 +37,7 @@ def on_button_pressed_b():
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
 def on_logo_event_pressed():
+    global Bez_odpovědi, A, B, C, D, E
     Bez_odpovědi = 0
     A = 0
     B = 0
