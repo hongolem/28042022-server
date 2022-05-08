@@ -1,5 +1,7 @@
 radio.set_group(100)
 
+Serial_numbers = []
+Bez_odpovědi = 0
 A = 0
 B = 0
 C = 0
@@ -14,9 +16,18 @@ def on_button_pressed_b():
     radio.send_number(0)
 input.on_button_pressed(Button.B, on_button_pressed_b)
 
+def on_received_string(receivedString):
+    global Serial_numbers
+    Serial_numbers.append(receivedString)
+    radio.set_group(101)
+    radio.send_string("Napojeno se serverem!")
+radio.on_received_string(on_received_string)
+
 def on_received_value(name, value):
-    global A, B, C, D, E
-    if value == 65:
+    global Bez_odpovědi, A, B, C, D, E
+    if value == 64:
+        Bez_odpovědi += 1
+    elif value == 65:
         A += 1
     elif value == 66:
         B += 1
